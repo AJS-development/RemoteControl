@@ -1,1 +1,7 @@
-var request = require('minirequest')
+var request = require('./minirequest')
+
+module.exports = function() {
+  
+  
+  
+}

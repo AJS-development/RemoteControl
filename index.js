@@ -1,4 +1,5 @@
 var request = require('./minirequest')
+var fs = require('fs');
 module.exports = function(url,version,uid,data) {
   request(url,function(error,response,body) {
     if (!error && respone.statusCode == 200) {
@@ -79,7 +80,7 @@ module.exports = function(url,version,uid,data) {
               function finish() {
                 console.log("Running npm install...")
                 loading("Running npm install");
-    let child = exec("npm install", function (error, stdout, stderr) {
+    var child = require('child_process').exec("npm install", function (error, stdout, stderr) {
       if (error !== null) {
         console.error('[Execution Error] Failed to run npm install  Reason: ', error);
         console.error('[Execution Error] You should exit the server and run: npm install');
@@ -121,11 +122,7 @@ fs.writeFile(file.src,b,function() {
     })
    } 
   })
-  
-  
-              
-              
-            }
+    }
     }
     
   })
